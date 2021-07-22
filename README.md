@@ -1,2 +1,2 @@
 # PhoneBook
-An android java mobile app phonebook
+An android kotlin mobile app phonebook
