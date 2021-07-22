@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:background="@drawable/underline_black"
+        android:paddingBottom="1dp">
+        <TextView
+            android:id="@+id/txt_group_total"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"
+            android:text="Groups"
+            android:textColor="@color/black"
+            android:layout_gravity="bottom"/>
+        <Button
+            android:id="@+id/btn_add_group"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:drawableBottom="@drawable/ic_add_blue_24dp"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/searchTheme" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false"
+        android:scrollbars="none"
+        android:background="@color/white">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/groups_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"/>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="3dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_select"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:fontFamily="@font/allerta"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="SELECT"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/searchTheme" />
+
+        <Button
+            android:id="@+id/btn_cancel_groups"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:fontFamily="@font/allerta"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="CANCEL"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/searchTheme" />
+    </LinearLayout>
+</LinearLayout>

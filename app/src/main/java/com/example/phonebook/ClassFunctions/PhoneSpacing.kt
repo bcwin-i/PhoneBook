@@ -1,0 +1,54 @@
+package com.example.phonebook.ClassFunctions
+
+import android.text.Editable
+import android.text.TextWatcher
+
+/**
+ * Custom [TextWatcher] class that appends a given [separator] for every [interval].
+ */
+abstract class PhoneSpacing(
+    private val separator: Char,
+    private val interval: Int
+) : TextWatcher {
+
+    private var dirty = false
+    private var isDelete = false
+
+    override fun afterTextChanged(editable: Editable?) {
+        if (dirty) return
+
+        dirty = true
+
+        val text = editable.toString().handleSeparator()
+        if (text.length < 10) onAfterTextChanged(text)
+
+        dirty = false
+    }
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        // Empty
+    }
+
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        isDelete = before != 0
+    }
+
+    private fun String.handleSeparator(): String {
+        val stringBuilder = StringBuilder(this)
+
+        if (length > 0 && length.rem(interval + 1) == 0) {
+            if (isDelete) {
+                stringBuilder.deleteCharAt(length - 1)
+            } else {
+                stringBuilder.insert(length - 1, separator)
+            }
+        }
+
+        return stringBuilder.toString()
+    }
+
+    /**
+     * Subclasses must implement this method to get the formatted text.
+     */
+    abstract fun onAfterTextChanged(text: String)
+}

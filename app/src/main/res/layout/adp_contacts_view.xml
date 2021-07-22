@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="10dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="@drawable/underline_blue"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_view_profile"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_account_user_display"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="7"
+        android:layout_height="wrap_content"
+        android:paddingVertical="3dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/txt_contact_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop = "7dp">
+        <ImageButton
+            android:id="@+id/imb_call_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_telephone"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="@color/white"
+            android:padding="5dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

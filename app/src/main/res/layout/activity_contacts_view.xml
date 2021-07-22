@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactsView"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Contact View"
+        android:background="@color/white"
+        app:titleTextAppearance="@style/tab_text"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+        app:titleTextColor="@color/colorAccent"
+        android:backgroundTint="@color/colorPrimaryDark"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_contact_view_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"/>
+                <TextView
+                    android:id="@+id/txt_contact_view_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="20dp"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="25dp"
+                    android:background="#BF000000"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ligh_gray"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:text="PHONE"/>
+
+            <Button
+                android:id="@+id/btn_context_view_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                style="?android:attr/borderlessButtonStyle"
+                android:paddingHorizontal="10dp"
+                android:textSize="18dp"
+                android:drawableEnd="@drawable/ic_telephone"
+                android:textAllCaps="false"
+                android:textAlignment="textStart"
+                android:textStyle="normal"
+                android:background="@drawable/retry_background"
+                android:layout_margin="15dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ligh_gray"
+                android:textStyle="bold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:text="EMAIL"/>
+
+            <Button
+                android:id="@+id/btn_contact_view_email"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="15dp"
+                android:textAlignment="textStart"
+                android:background="@color/white"
+                android:fontFamily="sans-serif"
+                android:layout_marginHorizontal="15dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textStyle="normal"
+                android:drawableEnd="@drawable/ic_mail_outline_black_24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ligh_gray"
+                android:textStyle="bold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:text="GROUPS"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_contest_view_groups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
